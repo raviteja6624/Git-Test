@@ -9,5 +9,7 @@ public class ContactInfoPrinter {
             System.debug('Name: ' + con.Name + ', Email: ' + con.Email);
         }
                     System.debug('Name: '  ', Email: ' );
+                    System.debug('Name: '  ', Email: ' );
+                    System.debug('Name: '  ', Email: ' );
     }
 }
