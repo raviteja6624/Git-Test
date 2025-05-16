@@ -1,0 +1,94 @@
+:host{
+    /* --h1-color:#447663;
+    --h4-color:#555; */
+    --h1-color:var(--dxp-s-text-heading-extra-large-color);
+    --h4-color:var(--dxp-s-text-heading-small-color);
+}
+
+.banner{
+    background-size: cover;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.main-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: serif;
+    padding: 70px 24px 24px 24px;
+}
+.social{
+    display: flex;
+    justify-content: space-evenly;
+    width: 200px;
+    margin-bottom: 24px;
+}
+.event-info{
+    text-align: center;
+}
+.event-info p{
+    font-weight: 500;
+    color: var(--h4-color);
+    font-size: 20px;
+    opacity: 0.8;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+.event-info h1{
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--h1-color);
+}
+.event-info h1>em{
+    font-size: 56px;
+    font-family: cursive;
+    display: block;
+    font-weight: 600;
+    letter-spacing: 6px;
+}
+.event-info h4{
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: var(--h4-color);
+}
+.countdown{
+    display: flex;
+    justify-content: space-between;
+    min-width: 420px;
+}
+.countdown .counter{
+    border: 2px solid #ddd;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 24px;
+    line-height: 56px;
+    font-weight: 400;
+}
+
+@media only screen and (max-width:720px) {
+    .countdown{
+        min-width: 380px;
+        justify-content: space-evenly;
+    }
+    .countdown .counter{
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        font-size: 16px;
+    }
+    .banner{
+        background-size: inherit;
+    }
+    .event-info h1, .event-info h4{
+        font-size: 22px;
+    }
+    .event-info h1>em{
+        font-size: 32px;
+    }
+}

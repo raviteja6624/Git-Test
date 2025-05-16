@@ -1,0 +1,19 @@
+<template>
+        <lightning-card title="Upload CSV" class="cardstyle"> 
+            <div class = 'innerpagestyle'>
+                    RecordId: {recordId}
+
+                <p > Hi iam file upload LWC </p>
+                <lightning-input type="file" 
+                                 label="Choose CSV File" 
+                                 accept=".csv"      
+                                 onchange={handleFileChange} >
+                </lightning-input>
+                <lightning-button label="Upload" 
+                                variant="brand" 
+                                onclick={handleUpload} >
+                </lightning-button>
+               
+            </div>
+        </lightning-card>
+</template>

@@ -1,0 +1,33 @@
+<template>
+  <lightning-accordion allow-multiple-sections-open="true">
+      <template for:each={accountData} for:item="accountWrapper">
+          <lightning-accordion-section 
+              key={accountWrapper.account.Id} 
+              label={accountWrapper.account.Name}>
+              
+              <!-- Display child accounts -->
+              <template if:true={accountWrapper.childAccounts}>
+                  <lightning-accordion-section 
+                      key={childAccounts.id} 
+                      label="Child Accounts">
+                      <template for:each={accountWrapper.childAccounts} for:item="child">
+                          <p key={child.Id}>{child.Name}</p>
+                      </template>
+                  </lightning-accordion-section>
+              </template>
+
+              <!-- Display contacts -->
+              <template if:true={accountWrapper.contacts}>
+                  <lightning-accordion-section 
+                      key={contact.Id} 
+                      label="Contacts">
+                      <template for:each={accountWrapper.contacts} for:item="contact">
+                          <p key={contact.Id}>{contact.Name}</p>
+                      </template>
+                  </lightning-accordion-section>
+              </template>
+
+          </lightning-accordion-section>
+      </template>
+  </lightning-accordion>
+</template>

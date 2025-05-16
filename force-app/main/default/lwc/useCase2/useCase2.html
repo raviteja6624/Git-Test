@@ -1,0 +1,180 @@
+<template>
+    <!--Header-->
+    <div class="slds-modal__header slds-text-heading_large slds-modal_large">
+        Add RFP Line Items
+    </div>
+    <div class="slds-scrollable" style="height:10rem;width:50rem" tabindex="0">
+    <!--<lightning-card class="slds-scrollable_x" style="height:5rem;width:24rem" tabindex="0">-->
+        <div class="slds-m-around_large">
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_medium">
+                <thead>
+                    <tr>
+                        <th scope="col" class="col-small">S.No</th>
+                        <th scope="col">Epic</th> <!--TEXT-->
+                        <th scope="col">Capability</th><!--TEXT-->
+                        <th scope="col">Priority</th><!--TEXT-->
+                        <th scope="col">Use Case</th><!--TEXT-->
+                        <th scope="col">Tech Approach</th><!--TEXT-->
+                        <th scope="col">DEV Efforts</th><!--NUMBER-->
+                        <th scope="col">QA Efforts</th><!--NUMBER-->
+                        <th scope="col">BA Efforts</th><!--NUMBER-->
+                        <th scope="col">Deployment Efforts</th><!--NUMBER-->
+                        <th scope="col">Documentation Efforts</th><!--NUMBER-->
+                        <th scope="col">Code Review Efforts</th><!--NUMBER-->
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={rowsWithIndex} for:item="row">
+                        <tr key={row.id}>
+                            <td class="col-small">{row.index}</td>
+                            <td>
+                                <lightning-input
+                                    type="text"
+                                    value={row.epic}
+                                    data-id={row.Id}
+                                    data-field="epic"
+                                    onchange={handleInputChange}
+                                ></lightning-input>
+                            </td>
+                            <td>
+                                <lightning-input
+                                    type="text"
+                                    value={row.capability}
+                                    data-id={row.Id}
+                                    data-field="capability"
+                                    onchange={handleInputChange}
+                                ></lightning-input>
+                            </td>
+                            <td>
+                                <lightning-combobox
+                                    label="Priority"
+                                    options={PriorityValues}
+                                    variant="label-hidden"
+                                    placeholder="Select Priority"
+                                    data-id={row.Id}
+                                    data-field="priority"
+                                    onchange={handleInputChange}
+                                ></lightning-combobox>
+                            </td>
+                            <td>
+                                <lightning-input
+                                    type="text"
+                                    value={row.usecase}
+                                    data-field="usecase"
+                                    data-id={row.Id}
+                                    onchange={handleInputChange}
+                                ></lightning-input>
+                            </td>
+                            <td>
+                                <lightning-input
+                                    type="text"
+                                    value={row.techapproach}
+                                    data-id={row.Id}
+                                    data-field="techapproach"
+                                    onchange={handleInputChange}
+                                ></lightning-input>
+                            </td>
+                            <td>
+                                <lightning-combobox
+                                    label="DevEfforts"
+                                    options={EffortValues}
+                                    variant="label-hidden"
+                                    placeholder="Select Efforts"
+                                    data-id={row.Id}
+                                    data-field="DevEfforts"
+                                    onchange={handleInputChange}
+                                ></lightning-combobox>
+                            </td>
+                            <td>
+                                <lightning-combobox
+                                    label="QAEfforts"
+                                    options={EffortValues}
+                                    variant="label-hidden"
+                                    placeholder="Select Efforts"
+                                    data-id={row.Id}
+                                    data-field="QAEfforts"
+                                    onchange={handleInputChange}
+                                ></lightning-combobox>
+                            </td>
+                            <td>
+                                <lightning-combobox
+                                    label="BAEfforts"
+                                    options={EffortValues}
+                                    variant="label-hidden"
+                                    placeholder="Select Efforts"
+                                    data-id={row.Id}
+                                    data-field="BAEfforts"
+                                    onchange={handleInputChange}
+                                ></lightning-combobox>
+                            </td>
+                            <td>
+                                <lightning-combobox
+                                    label="DeploymentEfforts"
+                                    options={EffortValues}
+                                    variant="label-hidden"
+                                    placeholder="Select Efforts"
+                                    data-id={row.Id}
+                                    data-field="DeploymentEfforts"
+                                    onchange={handleInputChange}
+                                ></lightning-combobox>
+                            </td>
+                            <td>
+                                <lightning-combobox
+                                    label="DocumentationEfforts"
+                                    options={EffortValues}
+                                    variant="label-hidden"
+                                    placeholder="Select Efforts"
+                                    data-id={row.Id}
+                                    data-field="DocumentationEfforts"
+                                    onchange={handleInputChange}
+                                ></lightning-combobox>
+                            </td>
+                            <td>
+                                <lightning-combobox
+                                    label="Code Review Efforts"
+                                    options={EffortValues}
+                                    variant="label-hidden"
+                                    placeholder="Select Efforts"
+                                    data-id={row.Id}
+                                    data-field="codeReviewEfforts"
+                                    onchange={handleInputChange}
+                                ></lightning-combobox>
+                            </td>
+                            <td>
+                                <lightning-button-icon
+                                    icon-name="utility:delete"
+                                    alternative-text="Delete"
+                                    variant="border-filled"
+                                    onclick={handleDeleteRow}
+                                    data-id={row.id}
+                                ></lightning-button-icon>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </div>
+            <!--Footer-->
+            <div class="slds-modal__footer slds-text-align_centre">
+                <lightning-button 
+                          label="ADD ROW" 
+                          variant="neutral"
+                          class="slds-m-right_small"
+                          onclick={handleAddRow}>
+                </lightning-button>
+                <lightning-button
+                    label="Save"
+                    variant="neutral"
+                    class="slds-m-right_small"
+                    onclick={handleSave}
+                ></lightning-button>
+                <lightning-button
+                    label="Submit"
+                    variant="brand"
+                    onclick={handleSubmit}
+                ></lightning-button>
+            </div>
+    <!--</lightning-card>-->
+</template>

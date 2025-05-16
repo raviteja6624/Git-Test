@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Custom Object DataTable">
+        <lightning-button
+            label="Add Row"
+            icon-name="utility:add"
+            class="slds-m-bottom_small"
+            onclick={handleAddRow}>
+        </lightning-button>
+
+        <lightning-datatable
+            data={data}
+            columns={columns}
+            key-field="id"
+            draft-values={draftValues}
+            oncellchange={handleCellChange}
+            onsave={handleSave}
+        >
+        </lightning-datatable>
+    </lightning-card>
+</template>

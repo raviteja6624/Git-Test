@@ -1,0 +1,16 @@
+.slds-table {
+    width: 300%;
+}
+
+.col-small {
+    width: 20px;
+    text-align: center;
+}
+.col-big {
+    width: 100px;
+    text-align: center;
+}
+.col-medium {
+    width: 70px;
+    text-align: center;
+}

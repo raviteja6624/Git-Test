@@ -1,0 +1,28 @@
+/* Utility Icon Styling */
+.utility-icon {
+    margin: 0 10px; /* Add spacing between icons */
+    padding: 8px;   /* Add padding for larger clickable area */
+    border-radius: 50%; /* Make the icon circular */
+    background-color: #f4f6f9; /* Light background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    display: inline-flex; /* Ensure inline display */
+}
+
+/* Hover Effect */
+.utility-icon:hover {
+    background-color: #e0e5ed; /* Slightly darker background on hover */
+    transform: scale(1.1); /* Slight zoom-in effect */
+}
+
+/* Styled Icon for Add Row */
+.utility-icon.styled-icon:nth-child(1) {
+    background-color: #d4edda; /* Greenish background for Add */
+    color: #155724; /* Darker green for contrast */
+}
+
+/* Styled Icon for Delete Row */
+.utility-icon.styled-icon:nth-child(2) {
+    background-color: #f8d7da; /* Reddish background for Delete */
+    color: #721c24; /* Darker red for contrast */
+}

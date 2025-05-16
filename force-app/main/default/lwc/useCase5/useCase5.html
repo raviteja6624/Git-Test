@@ -1,0 +1,51 @@
+<template>
+    <lightning-card title="Input Data">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={rows} for:item="row">
+                    <tr key={row.id}>
+                        <td>
+                            <lightning-input
+                                type="text"
+                                value={row.name}
+                                data-id={row.id}
+                                data-field="name"
+                                onchange={handleInputChange}
+                            ></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-input
+                                type="number"
+                                value={row.age}
+                                data-id={row.id}
+                                data-field="age"
+                                onchange={handleInputChange}
+                            ></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-input
+                                type="email"
+                                value={row.email}
+                                data-id={row.id}
+                                data-field="email"
+                                onchange={handleInputChange}
+                            ></lightning-input>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+        <lightning-button
+            label="Submit"
+            variant="brand"
+            onclick={handleSubmit}
+        ></lightning-button>
+    </lightning-card>
+</template>

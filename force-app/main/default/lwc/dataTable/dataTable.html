@@ -1,0 +1,47 @@
+<template>
+<div style = "height:300px;">
+<!-- Utility Icon for Add Row -->
+    <lightning-button-icon 
+        icon-name="utility:add" 
+        alternative-text="Add Row"
+        onclick={handleAddRow}
+        size="small">
+                                    variant="border-filled"
+    </lightning-button-icon>
+
+    <!-- Utility Icon for Delete Row -->
+    <lightning-button-icon 
+        icon-name="utility:delete" 
+        alternative-text="Delete Row"
+        onclick={handleDeleteRows}
+        size="small">
+                                    variant="border-filled"
+    </lightning-button-icon>
+
+<lightning-datatable
+    key-field="Id"
+    data={data}
+    show-row-number-column
+    onsave={handleSave}
+    draft-values={saveDraftValue}
+    hidden-checkbox-column
+    columns={columns}>
+</lightning-datatable>
+</div>
+</template>
+<!--
+<template>
+        <lightning-datatable width ="100%" height = "100%"
+                key-field="id"
+                data={data}
+                show-row-number-column
+                onsave={handleSave}
+                draft-values={draftValues}
+                hide-checkbox-column
+                columns={columns}>
+        </lightning-datatable>
+        <div class="slds-m-around_medium">
+            <lightning-button label="Save" variant="Neutral" onclick={handleSave} class="slds-m-centre_small"></lightning-button>
+        </div>
+</template>
+-->

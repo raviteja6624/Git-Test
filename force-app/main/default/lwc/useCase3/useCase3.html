@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Line Items" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <lightning-button label="Add Row" variant="brand" onclick={handleAddRow}></lightning-button>
+        </div>
+        <div class="slds-scrollable" style="height:20rem;width:60rem" tabindex="0">
+        <lightning-datatable 
+            key-field="Id"
+            data={data}
+            columns={columns}
+            draft-values={draftValues}
+            hide-checkbox-column
+            onsave={handleSave}
+            onrowaction={handleRowAction}
+            class="slds-m-around_medium">
+        </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

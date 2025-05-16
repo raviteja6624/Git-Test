@@ -1,0 +1,17 @@
+.innerpagestyle {
+    text-align: left; /* Align text to the left */
+    padding-left: 15px; /* Add space on the left */
+    padding-right: 15px; /* Add space on the right */
+    white-space: pre-line; /* Preserve line breaks */
+}
+/*.cardstyle{
+    max-width: 50px;  Adjust width as needed 
+    margin: 0 auto;  Centers the card horizontally 
+}*/
+.cardstyle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Full height */
+    /*width: 50vw; /* Full width */
+}

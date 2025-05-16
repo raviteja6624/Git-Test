@@ -1,0 +1,17 @@
+<template>
+    <lightning-datatable
+        key-field="id"
+        data={contacts}
+        columns={columns}
+        hide-default-footer
+        hide-header
+        track-field-changes
+        enable-add-remove-rows
+        enable-row-selection
+        row-selection-mode="single"
+        onaddrow={handleAddRow}
+        onremoverow={handleRemoveRow}
+        onchange={handleChange}
+    >
+    </lightning-datatable>
+</template>

@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Enter the Data">
+        <lightning-button label="Save" onclick={handleSave} class="slds-m-bottom_medium"></lightning-button>
+        
+        <lightning-datatable
+            data={data}
+            columns={columns}
+            key-field="id"
+            draft-values={draftValues}
+            onsave={handleSave}
+            hide-checkbox-column="true">
+        </lightning-datatable>
+    </lightning-card>
+</template>

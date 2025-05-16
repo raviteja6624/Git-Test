@@ -1,0 +1,21 @@
+<template>
+    <template if:true={picklistOptions1}>
+        <lightning-combobox
+            label="Priority Field 1"
+            options={picklistOptions1}
+            onchange={handlePicklistChange}>
+        </lightning-combobox>
+    </template>
+
+    <!--<template if:true={picklistOptions2}>
+        <lightning-combobox
+            label="Dev Efforts Field 2"
+            options={picklistOptions2}
+            onchange={handlePicklistChange}>
+        </lightning-combobox>
+    </template>-->
+
+    <template if:true={error}>
+        <p class="slds-text-color_error">Error: {error}</p>
+    </template>
+</template>
