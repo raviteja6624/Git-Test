@@ -8,5 +8,6 @@ public class ContactInfoPrinter {
         for (Contact con : contactList) {
             System.debug('Name: ' + con.Name + ', Email: ' + con.Email);
         }
+                    System.debug('Name: '  ', Email: ' );
     }
 }
